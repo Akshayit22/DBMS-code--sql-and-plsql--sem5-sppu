@@ -1,0 +1,306 @@
+> use lib
+switched to db lib
+> db.createCollection("Books");
+{ "ok" : 1 }
+> db.Books.insert(
+... {
+... "Title"="mongodb",
+... "Discription"="Learn NoSQL",
+... "Auther"="By Anmol",
+... "URL":"www.akshay",
+... "domain":"computer science",
+... "likes":7
+... )
+... };
+2022-10-18T14:44:08.852+0530 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):3:7
+> db.Books.insert( { "Title":"mongodb", "Discription":"Learn NoSQL", "Auther":"By Anmol", "URL":"www.akshay", "domain":"computer science", "likes":7 });
+WriteResult({ "nInserted" : 1 })
+> db.Books.insert( { "Title":"mongodb", "Discription":"Learn NoSQL", "Auther":"By Anmol", "URL":"www.akshay", "domain":"computer science", "likes":77 });
+WriteResult({ "nInserted" : 1 })
+> db.Books.insert( { "Title":"mongodb", "Discription":"Learn NoSQL", "Auther":"By Akshay", "URL":"www.akshay", "domain":"computer science", "likes":83 });
+WriteResult({ "nInserted" : 1 })
+> db.Books.insert( { "Title":"Java", "Discription":"Learn Java version 11", "Auther":"By Sanket", "URL":"www.akshay", "domain":"computer science", "likes":283});
+WriteResult({ "nInserted" : 1 })
+> db.Books.insert( { "Title":"C++", "Discription":"Learn C++ Beginners", "Auther":"By Pavin", "URL":"www.akshay", "domain":"computer science", "likes":395});
+WriteResult({ "nInserted" : 1 })
+> db.Books.Find();
+2022-10-18T14:48:10.937+0530 E QUERY    [thread1] TypeError: db.Books.Find is not a function :
+@(shell):1:1
+> db.Books.find();
+{ "_id" : ObjectId("634e6e7a4beacee7dea8db4f"), "Title" : "mongodb", "Discription" : "Learn NoSQL", "Auther" : "By Anmol", "URL" : "www.akshay", "domain" : "computer science", "likes" : 7 }
+{ "_id" : ObjectId("634e6e7f4beacee7dea8db50"), "Title" : "mongodb", "Discription" : "Learn NoSQL", "Auther" : "By Anmol", "URL" : "www.akshay", "domain" : "computer science", "likes" : 77 }
+{ "_id" : ObjectId("634e6ea14beacee7dea8db51"), "Title" : "mongodb", "Discription" : "Learn NoSQL", "Auther" : "By Akshay", "URL" : "www.akshay", "domain" : "computer science", "likes" : 83 }
+{ "_id" : ObjectId("634e6ee74beacee7dea8db52"), "Title" : "Java", "Discription" : "Learn Java version 11", "Auther" : "By Sanket", "URL" : "www.akshay", "domain" : "computer science", "likes" : 283 }
+{ "_id" : ObjectId("634e6f2e4beacee7dea8db53"), "Title" : "C++", "Discription" : "Learn C++ Beginners", "Auther" : "By Pavin", "URL" : "www.akshay", "domain" : "computer science", "likes" : 395 }
+> db.employees.find().pretty();
+> db.Books.find().pretty();
+{
+	"_id" : ObjectId("634e6e7a4beacee7dea8db4f"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 7
+}
+{
+	"_id" : ObjectId("634e6e7f4beacee7dea8db50"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 77
+}
+{
+	"_id" : ObjectId("634e6ea14beacee7dea8db51"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Akshay",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 83
+}
+{
+	"_id" : ObjectId("634e6ee74beacee7dea8db52"),
+	"Title" : "Java",
+	"Discription" : "Learn Java version 11",
+	"Auther" : "By Sanket",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 283
+}
+{
+	"_id" : ObjectId("634e6f2e4beacee7dea8db53"),
+	"Title" : "C++",
+	"Discription" : "Learn C++ Beginners",
+	"Auther" : "By Pavin",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 395
+}
+> db.emp
+> db.Books.insert( { "Title":"C++", "Discription":"Learn C++ Beginners", "Auther":"By Pavin", "URL":"www.akshay", "domain":"computer science","username":"anmol@2003","review":"it was very good to read", "likes":388});
+WriteResult({ "nInserted" : 1 })
+> db.Books.find().pretty();
+{
+	"_id" : ObjectId("634e6e7a4beacee7dea8db4f"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 7
+}
+{
+	"_id" : ObjectId("634e6e7f4beacee7dea8db50"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 77
+}
+{
+	"_id" : ObjectId("634e6ea14beacee7dea8db51"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Akshay",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 83
+}
+{
+	"_id" : ObjectId("634e6ee74beacee7dea8db52"),
+	"Title" : "Java",
+	"Discription" : "Learn Java version 11",
+	"Auther" : "By Sanket",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 283
+}
+{
+	"_id" : ObjectId("634e6f2e4beacee7dea8db53"),
+	"Title" : "C++",
+	"Discription" : "Learn C++ Beginners",
+	"Auther" : "By Pavin",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 395
+}
+{
+	"_id" : ObjectId("634e700d4beacee7dea8db54"),
+	"Title" : "C++",
+	"Discription" : "Learn C++ Beginners",
+	"Auther" : "By Pavin",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"username" : "anmol@2003",
+	"review" : "it was very good to read",
+	"likes" : 388
+}
+> db.Books.find({"Title":"mongodb"}).pretty();
+{
+	"_id" : ObjectId("634e6e7a4beacee7dea8db4f"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 7
+}
+{
+	"_id" : ObjectId("634e6e7f4beacee7dea8db50"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 77
+}
+{
+	"_id" : ObjectId("634e6ea14beacee7dea8db51"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Akshay",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 83
+}
+> db.Books.find({"Title":"mongodb"
+... )}:
+... };
+2022-10-18T14:57:30.617+0530 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):2:0
+> db.Books.find(
+... {
+... $or:[{"By":"Anmol"},
+... {"Title":"mongodb;
+2022-10-18T14:59:09.799+0530 E QUERY    [thread1] SyntaxError: unterminated string literal @(shell):4:9
+> db.Books.find(
+... {
+... $or:[{"Auther":"Anmol",
+... {"Title":"mongodb"}
+... ]});
+... ;
+... k;
+... irfiorf;
+... ):
+2022-10-18T15:01:03.550+0530 E QUERY    [thread1] SyntaxError: invalid property id @(shell):4:0
+> db.Books.find( { $or:[{"By":"By Anmol"}, {"Title":"mongodb}]});
+2022-10-18T15:02:12.309+0530 E QUERY    [thread1] SyntaxError: unterminated string literal @(shell):1:50
+> db.Books.find( { $or:[{"Auther":"By Anmol"}, {"Title":"mongodb}]});
+2022-10-18T15:02:34.925+0530 E QUERY    [thread1] SyntaxError: unterminated string literal @(shell):1:54
+> db.Books.find( { $or:[{"Auther":"By Anmol"}, {"Title":"mongodb"}]});
+{ "_id" : ObjectId("634e6e7a4beacee7dea8db4f"), "Title" : "mongodb", "Discription" : "Learn NoSQL", "Auther" : "By Anmol", "URL" : "www.akshay", "domain" : "computer science", "likes" : 7 }
+{ "_id" : ObjectId("634e6e7f4beacee7dea8db50"), "Title" : "mongodb", "Discription" : "Learn NoSQL", "Auther" : "By Anmol", "URL" : "www.akshay", "domain" : "computer science", "likes" : 77 }
+{ "_id" : ObjectId("634e6ea14beacee7dea8db51"), "Title" : "mongodb", "Discription" : "Learn NoSQL", "Auther" : "By Akshay", "URL" : "www.akshay", "domain" : "computer science", "likes" : 83 }
+> db.Books.find( { $or:[{"Auther":"By Anmol"}, {"Title":"mongodb"}]}).pretty();
+{
+	"_id" : ObjectId("634e6e7a4beacee7dea8db4f"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 7
+}
+{
+	"_id" : ObjectId("634e6e7f4beacee7dea8db50"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 77
+}
+{
+	"_id" : ObjectId("634e6ea14beacee7dea8db51"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Akshay",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 83
+}
+> db.Books.find( {"Auther":"By Anmol"}, {"Title":"mongodb"}).pretty();
+{ "_id" : ObjectId("634e6e7a4beacee7dea8db4f"), "Title" : "mongodb" }
+{ "_id" : ObjectId("634e6e7f4beacee7dea8db50"), "Title" : "mongodb" }
+> db.Books.find({ {"Auther":"By Anmol"}, {"Title":"mongodb"}}).pretty();
+2022-10-18T15:04:38.690+0530 E QUERY    [thread1] SyntaxError: invalid property id @(shell):1:16
+> db.Books.find( {"Auther":"By Anmol", "Title":"mongodb"}).pretty();
+{
+	"_id" : ObjectId("634e6e7a4beacee7dea8db4f"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 7
+}
+{
+	"_id" : ObjectId("634e6e7f4beacee7dea8db50"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 77
+}
+> db.Books.find( {"likes" : { $gt:10 }}).pretty();
+{
+	"_id" : ObjectId("634e6e7f4beacee7dea8db50"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 77
+}
+{
+	"_id" : ObjectId("634e6ea14beacee7dea8db51"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Akshay",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 83
+}
+{
+	"_id" : ObjectId("634e6ee74beacee7dea8db52"),
+	"Title" : "Java",
+	"Discription" : "Learn Java version 11",
+	"Auther" : "By Sanket",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 283
+}
+{
+	"_id" : ObjectId("634e6f2e4beacee7dea8db53"),
+	"Title" : "C++",
+	"Discription" : "Learn C++ Beginners",
+	"Auther" : "By Pavin",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 395
+}
+{
+	"_id" : ObjectId("634e700d4beacee7dea8db54"),
+	"Title" : "C++",
+	"Discription" : "Learn C++ Beginners",
+	"Auther" : "By Pavin",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"username" : "anmol@2003",
+	"review" : "it was very good to read",
+	"likes" : 388
+}
+> db.Books.find( {"likes" : { $lt:10 }}).pretty();
+{
+	"_id" : ObjectId("634e6e7a4beacee7dea8db4f"),
+	"Title" : "mongodb",
+	"Discription" : "Learn NoSQL",
+	"Auther" : "By Anmol",
+	"URL" : "www.akshay",
+	"domain" : "computer science",
+	"likes" : 7
+}

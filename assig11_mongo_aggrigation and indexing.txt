@@ -1,0 +1,115 @@
+Name : Akshay Telang
+class : TE B 
+Roll NO: 73
+Subject: DBMS Lab
+
+Assignment No. 11 
+Problem Statement : Create the collection books having the fields title,Description,by,url,tags and links
+
+
+
+> db.books.find({by:'john'}).pretty().count()
+
+
+> db.books.aggregate([{$group:{_id:"$by",minl:{$min:"$likes"},maxl:{$max:"$likes"}}}])
+{ "_id" : null, "minl" : null, "maxl" : null }
+{ "_id" : "darshana gavande", "minl" : 4, "maxl" : 445 }
+{ "_id" : "deepak londhe", "minl" : 45, "maxl" : 400 }
+{ "_id" : "john", "minl" : 400, "maxl" : 4400 }
+{ "_id" : "priya balak", "minl" : 45, "maxl" : 45 }
+> db.books.aggregate([{$match:{by:'john'}},{$group:{_id:"$by",minl:{$min:"$likes"},maxl:{$max:"$likes"}}}])
+{ "_id" : "john", "minl" : 400, "maxl" : 4400 }
+
+
+> db.books.aggregate([{$match:{by:'john'}},{$group:{_id:"$by",average:{$avg:"$likes"}}}])
+{ "_id" : "john", "average" : 2400 }
+
+> db.books.createIndex({by:1})
+{
+	"createdCollectionAutomatically" : false,
+	"numIndexesBefore" : 1,
+	"numIndexesAfter" : 2,
+	"ok" : 1
+}
+
+> db.books.aggregate([{$match:{by:'john'}},{$group:{_id:"$by",first_book:{$first:"$$ROOT"},lats_book:{$last:"$$ROOT"}}}]).pretty()
+{
+	"_id" : "john",
+	"first_book" : {
+		"_id" : ObjectId("634d0c0605ea6c0bc8fb1de6"),
+		"title" : "mysql",
+		"desp" : "about the mysql database",
+		"by" : "john",
+		"url" : "www.mysql.com",
+		"tags" : [
+			"#mysql",
+			"#database",
+			"#book"
+		],
+		"likes" : 400
+	},
+	"lats_book" : {
+		"_id" : ObjectId("634d0f9805ea6c0bc8fb1de9"),
+		"title" : "mongodb",
+		"desp" : "about the mongo database",
+		"by" : "john",
+		"url" : "www.mongodb.com",
+		"tags" : [
+			"#mongo",
+			"#database",
+			"#book"
+		],
+		"likes" : 4400
+	}
+}
+
+> db.books.find({by:'john'}).pretty()
+{
+	"_id" : ObjectId("634d0c0605ea6c0bc8fb1de6"),
+	"title" : "mysql",
+	"desp" : "about the mysql database",
+	"by" : "john",
+	"url" : "www.mysql.com",
+	"tags" : [
+		"#mysql",
+		"#database",
+		"#book"
+	],
+	"likes" : 400
+}
+{
+	"_id" : ObjectId("634d0f9805ea6c0bc8fb1de9"),
+	"title" : "mongodb",
+	"desp" : "about the mongo database",
+	"by" : "john",
+	"url" : "www.mongodb.com",
+	"tags" : [
+		"#mongo",
+		"#database",
+		"#book"
+	],
+	"likes" : 4400
+}
+
+> db.books.getIndexes()
+[
+	{
+		"v" : 2,
+		"key" : {
+			"_id" : 1
+		},
+		"name" : "_id_",
+		"ns" : "TE20.books"
+	},
+	{
+		"v" : 2,
+		"key" : {
+			"by" : 1
+		},
+		"name" : "by_1",
+		"ns" : "TE20.books"
+	}
+]
+
+
+

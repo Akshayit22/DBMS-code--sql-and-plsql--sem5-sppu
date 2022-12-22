@@ -1,0 +1,477 @@
+﻿unix@unix-HP-280-GTMT:~$ mongo
+MongoDB shell version v3.6.3
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.6.3
+Server has startup warnings: 
+2022-10-18T13:34:11.799+0530 I STORAGE  [initandlisten] 
+2022-10-18T13:34:11.799+0530 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2022-10-18T13:34:11.800+0530 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2022-10-18T13:34:13.559+0530 I CONTROL  [initandlisten] 
+2022-10-18T13:34:13.559+0530 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2022-10-18T13:34:13.559+0530 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2022-10-18T13:34:13.559+0530 I CONTROL  [initandlisten] 
+> show dbs
+admin       0.000GB
+company431  0.000GB
+config      0.000GB
+library43   0.000GB
+local       0.000GB
+> use local
+switched to db local
+> show collections
+startup_log
+> db.local.find()
+> db.local.find().pretty
+function () {
+    this._prettyShell = true;
+    return this;
+}
+> db.local.find().pretty()
+> db.statup_log.find().pretty()
+> cls
+
+
+
+
+
+
+> show dbs
+admin       0.000GB
+company431  0.000GB
+config      0.000GB
+library43   0.000GB
+local       0.000GB
+> use company431
+switched to db company431
+> show collections
+employees
+> use employees
+switched to db employees
+> use company54
+switched to db company54
+> show dbs
+admin       0.000GB
+company431  0.000GB
+config      0.000GB
+library43   0.000GB
+local       0.000GB
+> show collections
+> show dbs;
+admin       0.000GB
+company431  0.000GB
+config      0.000GB
+library43   0.000GB
+local       0.000GB
+> use company54;
+switched to db company54
+> show dbs;
+admin       0.000GB
+company431  0.000GB
+config      0.000GB
+library43   0.000GB
+local       0.000GB
+> use ak
+switched to db ak
+> show collections
+> db.ak.inert({"name":"akshay telang"})
+2022-10-18T13:52:26.062+0530 E QUERY    [thread1] TypeError: db.ak.inert is not a function :
+@(shell):1:1
+> db.ak.inert({"name":"akshay telang"});
+2022-10-18T13:52:28.758+0530 E QUERY    [thread1] TypeError: db.ak.inert is not a function :
+@(shell):1:1
+> db.ak.inert({"name":"akshaytelang"});
+2022-10-18T13:52:36.710+0530 E QUERY    [thread1] TypeError: db.ak.inert is not a function :
+@(shell):1:1
+> cla
+2022-10-18T13:52:43.358+0530 E QUERY    [thread1] ReferenceError: cla is not defined :
+@(shell):1:1
+> cls
+
+> use ak
+switched to db ak
+> db.createCollection("employees");
+{ "ok" : 1 }
+> db.employees.insert(
+... {
+... "id":143,
+... "name":"Anmol Patil",
+... "salary":50000000,
+... "dept":"comp",
+... "project":"database"
+... }
+... );
+WriteResult({ "nInserted" : 1 })
+> db.employees.insert( { "id":156, "name":"Sanket shirshat", "salary":500} );
+WriteResult({ "nInserted" : 1 })
+> db.employees.find();
+{ "_id" : ObjectId("634e65f24beacee7dea8db4b"), "id" : 143, "name" : "Anmol Patil", "salary" : 50000000, "dept" : "comp", "project" : "database" }
+{ "_id" : ObjectId("634e66c14beacee7dea8db4c"), "id" : 156, "name" : "Sanket shirshat", "salary" : 500 }
+> db.employees.find().pretty;
+function () {
+    this._prettyShell = true;
+    return this;
+}
+> db.employees.find().pretty();
+{
+	"_id" : ObjectId("634e65f24beacee7dea8db4b"),
+	"id" : 143,
+	"name" : "Anmol Patil",
+	"salary" : 50000000,
+	"dept" : "comp",
+	"project" : "database"
+}
+{
+	"_id" : ObjectId("634e66c14beacee7dea8db4c"),
+	"id" : 156,
+	"name" : "Sanket shirshat",
+	"salary" : 500
+}
+> db.employees.insert( { "id":201, "name":"shubham warungase", "salary":250,"gender":"female"} );
+WriteResult({ "nInserted" : 1 })
+> cls
+
+> db.employees.find().pretty;
+function () {
+    this._prettyShell = true;
+    return this;
+}
+> db.employees.find().pretty();
+{
+	"_id" : ObjectId("634e65f24beacee7dea8db4b"),
+	"id" : 143,
+	"name" : "Anmol Patil",
+	"salary" : 50000000,
+	"dept" : "comp",
+	"project" : "database"
+}
+{
+	"_id" : ObjectId("634e66c14beacee7dea8db4c"),
+	"id" : 156,
+	"name" : "Sanket shirshat",
+	"salary" : 500
+}
+{
+	"_id" : ObjectId("634e67864beacee7dea8db4d"),
+	"id" : 201,
+	"name" : "shubham warungase",
+	"salary" : 250,
+	"gender" : "female"
+}
+> cls
+
+
+
+
+
+
+
+
+
+> jkkj
+2022-10-18T14:15:20.676+0530 E QUERY    [thread1] ReferenceError: jkkj is not defined :
+@(shell):1:1
+> c;
+2022-10-18T14:15:23.020+0530 E QUERY    [thread1] ReferenceError: c is not defined :
+@(shell):1:1
+> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> db.employees.find(;)
+2022-10-18T14:17:10.194+0530 E QUERY    [thread1] SyntaxError: expected expression, got ';' @(shell):1:18
+> db.employees.find();
+{ "_id" : ObjectId("634e65f24beacee7dea8db4b"), "id" : 143, "name" : "Anmol( ) Patil", "salary" : 50000000, "dept" : "comp", "project" : "database" }
+{ "_id" : ObjectId("634e66c14beacee7dea8db4c"), "id" : 156, "name" : "Sanket shirshat", "salary" : 500 }
+{ "_id" : ObjectId("634e67864beacee7dea8db4d"), "id" : 201, "name" : "shubham( ) warungase", "salary" : 250, "gender" : "female", "husband_name" : "kiran nallovde." }
+> db.employees.find().pretty();
+{
+	"_id" : ObjectId("634e65f24beacee7dea8db4b"),
+	"id" : 143,
+	"name" : "Anmol( ) Patil",
+	"salary" : 50000000,
+	"dept" : "comp",
+	"project" : "database"
+}
+{
+	"_id" : ObjectId("634e66c14beacee7dea8db4c"),
+	"id" : 156,
+	"name" : "Sanket shirshat",
+	"salary" : 500
+}
+{
+	"_id" : ObjectId("634e67864beacee7dea8db4d"),
+	"id" : 201,
+	"name" : "shubham( ) warungase",
+	"salary" : 250,
+	"gender" : "female",
+	"husband_name" : "kiran nallovde."
+}
+> cls
+
+
+> db.employees.find().pretty();
+{
+	"_id" : ObjectId("634e65f24beacee7dea8db4b"),
+	"id" : 143,
+	"name" : "Anmol( ) Patil",
+	"salary" : 50000000,
+	"dept" : "comp",
+	"project" : "database"
+}
+{
+	"_id" : ObjectId("634e66c14beacee7dea8db4c"),
+	"id" : 156,
+	"name" : "Sanket shirshat",
+	"salary" : 500
+}
+{
+	"_id" : ObjectId("634e67864beacee7dea8db4d"),
+	"id" : 201,
+	"name" : "shubham( ) warungase",
+	"salary" : 250,
+	"gender" : "female",
+	"husband_name" : "kiran nallovde."
+}
+> cls
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> db.employees.update(
+... {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+... 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+... db.employees.find().pretty();
+... );
+2022-10-18T14:22:11.030+0530 E QUERY    [thread1] SyntaxError: missing ) after argument list @(shell):2:28
+> db.employees.update(
+... {"id":201},
+... {$set : {"husband_name": "kiran nalawade"}
+... }
+... );
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.employees.find().pretty();
+{
+	"_id" : ObjectId("634e65f24beacee7dea8db4b"),
+	"id" : 143,
+	"name" : "Anmol Patil",
+	"salary" : 50000000,
+	"dept" : "comp",
+	"project" : "database"
+}
+{
+	"_id" : ObjectId("634e66c14beacee7dea8db4c"),
+	"id" : 156,
+	"name" : "Sanket shirshat",
+	"salary" : 500
+}
+{
+	"_id" : ObjectId("634e67864beacee7dea8db4d"),
+	"id" : 201,
+	"name" : "shubham warungase",
+	"salary" : 250,
+	"gender" : "female",
+	"husband_name" : "kiran nalawade"
+}
+> cls
+
+
+
+
+> db.employees.update( {"id":201}, {$set : {"husband_name": "kiran nalawade"} } );
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+> db.employees.find().pretty();
+{
+	"_id" : ObjectId("634e65f24beacee7dea8db4b"),
+	"id" : 143,
+	"name" : "Anmol Patil",
+	"salary" : 50000000,
+	"dept" : "comp",
+	"project" : "database"
+}
+{
+	"_id" : ObjectId("634e66c14beacee7dea8db4c"),
+	"id" : 156,
+	"name" : "Sanket shirshat",
+	"salary" : 500
+}
+{
+	"_id" : ObjectId("634e67864beacee7dea8db4d"),
+	"id" : 201,
+	"name" : "shubham warungase",
+	"salary" : 250,
+	"gender" : "female",
+	"husband_name" : "kiran nalawade"
+}
+> db.employees.insert( { "id":301, "name":"warungase  ", "salary":250000,"gender":"female"} );
+WriteResult({ "nInserted" : 1 })
+> db.employees.find().pretty();
+{
+	"_id" : ObjectId("634e65f24beacee7dea8db4b"),
+	"id" : 143,
+	"name" : "Anmol Patil",
+	"salary" : 50000000,
+	"dept" : "comp",
+	"project" : "database"
+}
+{
+	"_id" : ObjectId("634e66c14beacee7dea8db4c"),
+	"id" : 156,
+	"name" : "Sanket shirshat",
+	"salary" : 500
+}
+{
+	"_id" : ObjectId("634e67864beacee7dea8db4d"),
+	"id" : 201,
+	"name" : "shubham warungase",
+	"salary" : 250,
+	"gender" : "female",
+	"husband_name" : "kiran nalawade"
+}
+{
+	"_id" : ObjectId("634e6ba94beacee7dea8db4e"),
+	"id" : 301,
+	"name" : "warungase ",
+	"salary" : 250000,
+	"gender" : "female"
+}
+> cls
+
+> db.employees.remove(
+... {
+... "id":301
+... }
+... );
+WriteResult({ "nRemoved" : 1 })
+> db.employees.find().pretty();
+{
+	"_id" : ObjectId("634e65f24beacee7dea8db4b"),
+	"id" : 143,
+	"name" : "Anmol Patil",
+	"salary" : 50000000,
+	"dept" : "comp",
+	"project" : "database"
+}
+{
+	"_id" : ObjectId("634e66c14beacee7dea8db4c"),
+	"id" : 156,
+	"name" : "Sanket shirshat",
+	"salary" : 500
+}
+{
+	"_id" : ObjectId("634e67864beacee7dea8db4d"),
+	"id" : 201,
+	"name" : "shubham warungase",
+	"salary" : 250,
+	"gender" : "female"
+}
+> cls
+
